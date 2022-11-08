@@ -1,0 +1,68 @@
+.navbar ul {
+  list-style: none;
+}
+.navbar ul a {
+  text-decoration: none;
+}
+.nav-item .dropdown {
+  width: 200px;
+  display: block;
+  position: absolute;
+  top: 50px;
+  transition: 300ms;
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(5px);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+  border-radius: 4px;
+  z-index: 999;
+  box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.nav-item .dropdown .nav-link {
+  color: #636363;
+}
+
+.nav-item .dropdown .dropdown {
+  top: 0;
+  left: calc(100% + 20px);
+  border-top: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.nav-item .dropdown .dropdown:before {
+  top: 10px;
+  left: -10px;
+  border: 5px solid transparent;
+  border-right-color: #000;
+}
+
+.nav-item .dropdown:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  border: 5px solid transparent;
+  border-bottom-color: #000;
+  display: none;
+}
+
+.nav-item .dropdown .nav-item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.nav-item .dropdown > .nav-item:hover > .nav-link {
+  color: #0081ff;
+}
+
+.nav-item:hover > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.nav-item:hover > a::before {
+  transform: rotate(90deg);
+}
